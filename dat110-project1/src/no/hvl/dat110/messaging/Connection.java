@@ -36,14 +36,14 @@ public class Connection {
 
 		byte[] data;
 		
-		// TODO - START
+		// Done?
 		// encapsulate the data contained in the message and write to the output stream
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-			
-		// TODO - END
-
+		try {
+            outStream.write(MessageUtils.encapsulate(message));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 	public Message receive() {
@@ -51,15 +51,18 @@ public class Connection {
 		Message message = null;
 		byte[] data;
 		
-		// TODO - START
+		// Done?
 		// read a segment from the input stream and decapsulate into message
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-		
-		// TODO - END
-		
-		return message;
+		try {
+            data = inStream.readNBytes(128);
+
+            MessageUtils.decapsulate(data);
+            return message;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return message;
 		
 	}
 

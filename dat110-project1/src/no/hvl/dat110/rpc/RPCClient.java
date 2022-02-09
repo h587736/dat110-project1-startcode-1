@@ -15,24 +15,20 @@ public class RPCClient {
 	
 	public void connect() {
 		
-		// TODO - START
+		// Done
 		// connect using the underlying messaging layer connection
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		connection = msgclient.connect();
 		
-		// TODO - END
 	}
 	
 	public void disconnect() {
 		
-		// TODO - START
+		// Done
 		// disconnect/close the underlying messaging connection
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		connection.close();
 		
-		// TODO - END
 	}
 	
 	public byte[] call(byte rpcid, byte[] params) {

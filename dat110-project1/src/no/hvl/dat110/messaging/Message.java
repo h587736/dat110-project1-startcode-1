@@ -8,12 +8,10 @@ public class Message {
 
 	public Message(byte[] data) {
 		
-		// TODO - START
+		// Done
 		
-		if (true)
-			throw new UnsupportedOperationException(TODO.constructor("Message"));
+		this.data = data;
 			
-		// TODO - END
 	}
 
 	public byte[] getData() {
