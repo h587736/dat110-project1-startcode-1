@@ -35,10 +35,9 @@ public class RPCClient {
 		
 		byte[] returnval = null;
 		
-		// TODO - START 
+		// Done
 		
 		/* 
-		 * 
 		Make a remote call on the RPC server by sending an RPC request message
 		and receive an RPC reply message
 		
@@ -49,10 +48,10 @@ public class RPCClient {
 			
 		*/
 				
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
+		Message message = new Message(RPCUtils.encapsulate(rpcid, params));
+		connection.send(message);
+		returnval = RPCUtils.decapsulate(connection.receive().getData());
 		
-		// TODO - END
 		return returnval;
 		
 	}

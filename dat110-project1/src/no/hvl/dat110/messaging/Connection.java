@@ -33,8 +33,6 @@ public class Connection {
 	}
 
 	public void send(Message message) {
-
-		byte[] data;
 		
 		// Done?
 		// encapsulate the data contained in the message and write to the output stream
@@ -49,16 +47,14 @@ public class Connection {
 	public Message receive() {
 
 		Message message = null;
-		byte[] data;
+		byte[] data = new byte[128];
 		
 		// Done?
 		// read a segment from the input stream and decapsulate into message
 		
 		try {
-            data = inStream.readNBytes(128);
-
-            MessageUtils.decapsulate(data);
-            return message;
+            inStream.read(data);
+            message = MessageUtils.decapsulate(data);
         } catch (IOException e) {
             e.printStackTrace();
         }

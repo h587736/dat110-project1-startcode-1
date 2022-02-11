@@ -49,9 +49,9 @@ public class RPCServer {
 		   // - lookup the method to be invoked
 		   RPCRemoteImpl method = services.get(rpcid);
 		   // - invoke the method
-           byte[] reply = method.invoke(requestmsg.getData());
+           byte[] reply = method.invoke(RPCUtils.decapsulate(byteIn));
 		   // - send back message containing RPC reply
-           replymsg = new Message(reply);
+           replymsg = new Message(RPCUtils.encapsulate(rpcid, reply));
            connection.send(replymsg);
 		   	   
 		   if (rpcid == RPCCommon.RPIDSTOP) {
