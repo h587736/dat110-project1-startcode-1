@@ -1,6 +1,8 @@
 ![](assets/messageTest.JPG)
+![](assets/TestMessaging.JPG)
 ![](assets/RPCUtils-Test.JPG)
-
+![](assets/TestRPC.JPG)
+![](assets/TestSystem.JPG)
 
 
 ## DAT110 - Project 1: Socket Programming and RPC middleware
